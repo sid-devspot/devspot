@@ -1,0 +1,236 @@
+// App
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@font-face {
+  font-family: "Cubano";
+  src: url("./Cubano.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --theme-colour: rgb(255, 226, 102);
+  --sub-theme-colour: #433dc3;
+  --app-mode-clr: #0d1116;
+  --font-colour: #e2e2e2;
+  --font-dim-colour: #9198a1;
+
+  // Mesh Background
+  --dark-glass: rgba(0, 0, 0, 0.263);
+  --dark-border: rgba(255, 255, 255, 0.097);
+  --code-snippet: rgba(0, 0, 0, 0.199);
+  --active-nav: rgba(255, 255, 255, 0.088);
+
+  // Code Snippet
+  --code-snippet: #0d1116 !important;
+  --code-snippet-bdr: #3d444d !important;
+
+  // Module Nav
+  --module-nav-clr: #02040a;
+  --module-nav-txt: #ffffff;
+  --module-nav-dim-txt: #a89d96;
+  --module-nav-active-txt: #ffffff;
+  --module-nav-bdr: #3d444d;
+
+  // Font
+  --app-font-heads: "Cubano", serif !important;
+  --app-font-content: "Outfit", sans-serif;
+  --font-size-lg: 3.6rem;
+  --font-size-rg: 1.8rem;
+  --font-size-md: 1.6rem;
+  --font-size-sm: 1.2rem;
+  --font-size-xsm: 1rem;
+  --font-lineheight-lg: 4.2rem;
+  --font-lineheight-md: 2.6rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+}
+
+// Layer Colour
+$layerClr01: rgba(170, 170, 170, 0.08);
+$layerClr02: rgba(0, 0, 0, 0.1);
+$layerClr03: rgba(255, 255, 255, 0.097);
+
+@mixin blurLayer(
+  $bdrRds: 1rem,
+  $blur: 5px,
+  $layerClr01: $layerClr01,
+  $layerClr02: $layerClr02,
+  $layerClr03: $layerClr03
+) {
+  background: $layerClr01;
+  box-shadow: 0 4px 10px $layerClr02;
+  border: 0.15rem solid var(--dark-border);
+  border-radius: $bdrRds;
+}
+
+@mixin lightMode() {
+  background-color: hsla(266, 100%, 82%, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1823 1823' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      circle at 55% 88%,
+      hsla(340, 66%, 89%, 1) 19%,
+      transparent 86.73008439094286%
+    ),
+    radial-gradient(
+      circle at 89% 86%,
+      hsla(333, 100%, 19%, 0.47) 3.5419327141440644%,
+      transparent 86.60640420591575%
+    ),
+    radial-gradient(
+      circle at 5% 94%,
+      hsla(33, 83%, 69%, 1) 7.316071150124744%,
+      transparent 46.1130789656234%
+    ),
+    radial-gradient(
+      circle at 48% 34%,
+      hsla(11, 75%, 67%, 1) 18%,
+      transparent 52%
+    ),
+    radial-gradient(
+      circle at 64% 73%,
+      hsla(337, 100%, 87%, 1) 3.5419327141440644%,
+      transparent 60.78034528031442%
+    );
+  background-blend-mode: overlay, overlay, normal, normal, hue, normal;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin darkMode() {
+  --_mesh-gradient-blur: 0px;
+  --_mesh-gradient-blend-mode: normal;
+  background: radial-gradient(at 11% 14%, #0e332f 0px, transparent 50%),
+    radial-gradient(at 35% 10%, #0e2433 0px, transparent 50%),
+    radial-gradient(at 44% 86%, #0e1233 0px, transparent 50%),
+    radial-gradient(at 62% 3%, #330e12 0px, transparent 50%),
+    radial-gradient(at 38% 77%, #332f0e 0px, transparent 50%) #000000;
+  mix-blend-mode: var(--_mesh-gradient-blend-mode);
+  filter: blur(var(--_mesh-gradient-blur));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.light-mode {
+  @include lightMode();
+  --dark-glass: rgba(0, 0, 0, 0.111) !important;
+  --dark-border: rgba(255, 255, 255, 0.5);
+  --theme-colour: #fdf8e1 !important;
+  --font-colour: #161616 !important;
+  --font-dim-colour: #2d2d2d !important;
+  --app-mode-clr: #ffffff !important;
+  --code-snippet: #fbfbfb !important;
+  --code-snippet-bdr: #ececec !important;
+  --active-nav: rgb(255, 255, 255) !important;
+
+  // Module Nav
+  --module-nav-clr: #fbfbfb;
+  --module-nav-txt: #2c2c2c;
+  --module-nav-dim-txt: #8c8c8c;
+  --module-nav-active-txt: #2c2c2c;
+  --module-nav-bdr: #ececec;
+
+  color: #161616;
+}
+
+.dark-mode {
+  @include darkMode();
+  --font-colour: #e2e2e2 !important;
+
+  color: #e2e2e2;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--app-font-content) !important;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5,
+.mat-typography h6 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--app-font-heads);
+}
+
+.mat-typography p {
+  margin: 0;
+  padding: 0;
+  font-family: var(--app-font-content);
+}
+
+.mat-mdc-menu-item-text {
+  font-family: var(--app-font-heads) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #303030 !important;
+}
+
+html,
+body,
+div,
+span,
+app-root,
+* {
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.highlight {
+  color: var(--theme-colour);
+}
+
+.uline {
+  text-decoration: underline;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.4rem;
+}
+
+.type-effect {
+  max-width: fit-content;
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid var(--theme-colour);
+  white-space: normal;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 40ch;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--theme-colour);
+  }
+}

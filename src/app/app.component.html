@@ -1,0 +1,256 @@
+<main>
+  <section class="app-component app-home" #sectionRef>
+    <nav>
+      <button class="theme-btn" (click)="toggleTheme()">
+        <span *ngIf="isDarkMode == false">🌞</span>
+        <span *ngIf="isDarkMode == true">🌙</span>
+      </button>
+    </nav>
+
+    <div class="home-container">
+      <h3 class="highlight type-effect" *ngIf="screenWidth > 700">
+        👋 Hey there, I'm Siddarth G
+      </h3>
+      <h3 class="highlight" *ngIf="screenWidth < 700">
+        👋 Hey there,
+        <span class="type-effect">I'm Siddarth G</span>
+      </h3>
+      <p>
+        I'm a Frontend Developer who enjoys turning pixels into playful,
+        functional interfaces. I like building things that feel smooth, look
+        clean, and just work. Design is where I sketch ideas. Code is where I
+        bring them to life. I try to keep things simple, neat, and a little bit
+        shiny ✨
+      </p>
+      <div class="icons">
+        <a href="https://github.com/orgs/Sids-projects/repositories"
+          ><img src="./assets/Subtract.svg" alt="Github Logo" /> Github</a
+        >
+        <a href="#"><img src="./assets/Vector.svg" alt="Github Logo" /> NPM</a>
+        <a href="https://www.linkedin.com/in/mrsiddarth/"
+          ><img src="./assets/linkedin.svg" alt="Linkedin Logo" /> Linkedin</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-about" #sectionRef>
+    <header>
+      <h2>🧰 What I Use & How I Build</h2>
+      <p>
+        I like making the web feel nice — from scribbles to pixels, clean and
+        fun all the way.
+      </p>
+    </header>
+
+    <div class="app-body">
+      <div class="about-container">
+        <div class="about-content">
+          <h3 class="highlight">HTML / CSS / JavaScript / TypeScript</h3>
+          <p>
+            The essentials — used to structure, style, and breathe life into the
+            frontend.
+          </p>
+        </div>
+        <div class="about-content">
+          <h3 class="highlight">Angular</h3>
+          <p>
+            Where it all comes together — building smooth, reactive, single-page
+            applications.
+          </p>
+        </div>
+        <div class="about-content">
+          <h3 class="highlight">Figma / Illustrator / Photoshop / Inkscape</h3>
+          <p>
+            My design toolkit — for wireframing, visual design, and keeping
+            everything neat and user-friendly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-experience" #sectionRef>
+    <header>
+      <h2>🧠 My Journey So Far</h2>
+      <p>From curious clicks to clean code — here's where I've been.</p>
+    </header>
+    <div class="app-body experience-content">
+      <div class="experience-content-01">
+        <h3 class="highlight">🛠 Vsolv Engineering Pvt Ltd</h3>
+        <p>Frontend Developer / UI-UX Designer</p>
+        <p>2025 - Present</p>
+      </div>
+      <div class="experience-content-02">
+        <div class="left-box">
+          <p>
+            Built modern Angular web apps that run silky smooth across devices
+          </p>
+          <p>
+            Collaborated like a champ with developers, designers & product folks
+          </p>
+        </div>
+        <div class="right-box">
+          <p>
+            Wove in eye-catching UI/UX that didn't just look good, but made
+            sense
+          </p>
+          <p>
+            Always racing against time (and winning), delivering high-quality
+            code
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-qualify" #sectionRef>
+    <header>
+      <h2>🏫 A Bit of Background</h2>
+      <p>
+        Wrapped up higher secondary, figured out I liked tech more than
+        textbooks
+      </p>
+    </header>
+
+    <div class="app-body">
+      <div class="qualify-container">
+        <div class="qualify-content">
+          <h2 class="qualify-icon qualify-icon-01">🏣</h2>
+          <div>
+            <p>(2018 - 2020)</p>
+            <h3 class="highlight">St. Peter's Institute</h3>
+            <p>
+              B.Com — learned about business, numbers, and how not to mess up a
+              balance sheet
+            </p>
+          </div>
+        </div>
+        <div class="qualify-content">
+          <h2 class="qualify-icon qualify-icon-02">🏫</h2>
+          <div>
+            <p>(2016 - 2017)</p>
+            <h3 class="highlight">ICF Silver Jubilee School</h3>
+            <p>
+              Wrapped up higher secondary, figured out I liked tech more than
+              textbooks
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-projects" #sectionRef>
+    <header>
+      <h2>🧪 Projects</h2>
+      <p>Stuff I've built — ideas turned into things you can click.</p>
+    </header>
+
+    <div class="app-body">
+      <div class="project-container" #projectContainer>
+        <div class="project-content">
+          <img src="./assets/pin.svg" alt="Pin Vector" />
+          <small>01</small>
+          <h3 class="highlight">💸 WalRec - Wallet Recorder</h3>
+          <p>
+            A simple finance tracker to help keep an eye on daily expenses and
+            incomes. Made with Angular + Firebase — login, track, and see your
+            money move in real-time.
+          </p>
+          <div class="project-content-btns">
+            <a href="https://walrec-9e5d8.web.app/" target="_blank">GitHub</a>
+            <a href="https://walrec-9e5d8.web.app/" target="_blank">Link</a>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <img src="./assets/pin.svg" alt="Pin Vector" />
+          <small>02</small>
+          <h3 class="highlight">🎨 CSSFusion</h3>
+          <p>A lightweight CSS utility library.</p>
+          <p>
+            It's like a little style toolkit — plug it into any project and
+            build with ready-made classes. Handy when you want less CSS clutter
+            and more styling freedom.
+          </p>
+          <div class="project-content-btns">
+            <a
+              href="https://sids-projects.github.io/CSSFusion/#/"
+              target="_blank"
+              >GitHub</a
+            >
+            <a href="https://github.com/Sids-projects/CSSFusion" target="_blank"
+              >Live Demo</a
+            >
+          </div>
+        </div>
+
+        <div class="project-content">
+          <img src="./assets/pin.svg" alt="Pin Vector" />
+          <small>03</small>
+          <h3 class="highlight">🌍 TravellersPond</h3>
+          <p>A lightweight CSS utility library.</p>
+          <p>
+            A full-on travel agency website built with Angular, crafted for a
+            real client. Think destination highlights, sweet travel deals, and a
+            smooth booking flow — all wrapped in a clean UI. Deployed on
+            Bluehost and
+          </p>
+          <div class="project-content-btns">
+            <a href="https://travellerspond.com/web" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <img src="./assets/pin.svg" alt="Pin Vector" />
+          <small>04</small>
+          <h3 class="highlight">🎨 StyleDocs</h3>
+          <p>A lightweight Angular utility library.</p>
+          <p>
+            It's like a little style toolkit — plug it into any project and
+            build with ready-made classes. Handy when you want less CSS clutter
+            and more styling freedom.
+          </p>
+          <div class="project-content-btns">
+            <a
+              href="http://fe-content.s3.ap-south-1.amazonaws.com/styledocs/index.html"
+              target="_blank"
+              >Live</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="project-arrows">
+        <p (click)="scrollLeft()">◀️</p>
+        <p (click)="scrollRight()">▶️</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-contact" #sectionRef>
+    <header>
+      <h2>📮 Say Hello</h2>
+      <p>
+        Always open to chat, share ideas, or collab on something cool. Whether
+        it's frontend fun, UI/UX design, or random side projects — I'm in.
+      </p>
+    </header>
+    <div class="app-body contact-details">
+      <p>
+        <span>📧</span>
+        <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>
+      </p>
+      <p>
+        <span>🌐</span>
+        <a href="https://sids-projects.github.io/DevSpot/" target="_blank"
+          >My DevSpot</a
+        >
+      </p>
+      <small
+        >🤝 Let's make the web a little cooler, one project at a time.</small
+      >
+    </div>
+  </section>
+</main>
