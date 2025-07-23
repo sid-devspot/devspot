@@ -20,17 +20,17 @@ export class AppComponent implements OnInit {
   @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('projectContainer', { static: false })
   projectContainer!: ElementRef<HTMLDivElement>;
-  isDarkMode = false;
-  newTheme!: string;
+  // isDarkMode = false;
+  // newTheme!: string;
   screenWidth: number = window.innerWidth;
   screenHeight: number = window.innerHeight;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
-    this.isDarkMode = savedTheme === 'dark-mode';
-    document.body.classList.add(savedTheme);
+    // const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+    // this.isDarkMode = savedTheme === 'dark-mode';
+    // document.body.classList.add(savedTheme);
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -67,25 +67,25 @@ export class AppComponent implements OnInit {
     this.screenHeight = window.innerHeight;
   }
 
-  private theme = new BehaviorSubject<string>(
-    localStorage.getItem('theme') || 'dark-mode'
-  );
-  currentTheme = this.theme.asObservable();
+  // private theme = new BehaviorSubject<string>(
+  //   localStorage.getItem('theme') || 'dark-mode'
+  // );
+  // currentTheme = this.theme.asObservable();
 
-  setTheme(theme: string): void {
-    const oldTheme = this.isDarkMode ? 'dark-mode' : 'light-mode';
-    document.body.classList.remove(oldTheme);
-    document.body.classList.add(theme);
-    this.isDarkMode = theme === 'dark-mode';
+  // setTheme(theme: string): void {
+  //   const oldTheme = this.isDarkMode ? 'dark-mode' : 'light-mode';
+  //   document.body.classList.remove(oldTheme);
+  //   document.body.classList.add(theme);
+  //   this.isDarkMode = theme === 'dark-mode';
 
-    this.theme.next(theme);
-    localStorage.setItem('theme', theme);
-  }
+  //   this.theme.next(theme);
+  //   localStorage.setItem('theme', theme);
+  // }
 
-  toggleTheme(): void {
-    this.newTheme = this.isDarkMode ? 'light-mode' : 'dark-mode';
-    this.setTheme(this.newTheme);
-  }
+  // toggleTheme(): void {
+  //   this.newTheme = this.isDarkMode ? 'light-mode' : 'dark-mode';
+  //   this.setTheme(this.newTheme);
+  // }
 
   scrollLeft() {
     this.projectContainer.nativeElement.scrollBy({

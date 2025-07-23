@@ -1,17 +1,10 @@
 <main>
   <section class="app-component app-home" #sectionRef>
-    <nav>
-      <button class="theme-btn" (click)="toggleTheme()">
-        <span *ngIf="isDarkMode == false">🌞</span>
-        <span *ngIf="isDarkMode == true">🌙</span>
-      </button>
-    </nav>
-
     <div class="home-container">
-      <h3 class="highlight type-effect" *ngIf="screenWidth > 700">
+      <h3 class="type-effect" *ngIf="screenWidth > 700">
         👋 Hey there, I'm Siddarth G
       </h3>
-      <h3 class="highlight" *ngIf="screenWidth < 700">
+      <h3 *ngIf="screenWidth < 700">
         👋 Hey there,
         <span class="type-effect">I'm Siddarth G</span>
       </h3>
@@ -143,88 +136,172 @@
 
   <section class="app-component app-projects" #sectionRef>
     <header>
-      <h2>🧪 Projects</h2>
-      <p>Stuff I've built — ideas turned into things you can click.</p>
-    </header>
+      <div class="header-01">
+        <h2>💸 Project - WalRec</h2>
+        <p>
+          A personal expense tracking app with dark UI and chart-based insights.
+        </p>
+      </div>
 
-    <div class="app-body">
-      <div class="project-container" #projectContainer>
-        <div class="project-content">
-          <img src="./assets/pin.svg" alt="Pin Vector" />
-          <small>01</small>
-          <h3 class="highlight">💸 WalRec - Wallet Recorder</h3>
+      <div class="header-02">
+        <a href="https://walrec-9e5d8.web.app/" target="_blank">🔗 Link</a>
+      </div>
+    </header>
+    <div class="project-content">
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>📦 Overview</h3>
           <p>
             A simple finance tracker to help keep an eye on daily expenses and
             incomes. Made with Angular + Firebase — login, track, and see your
             money move in real-time.
           </p>
-          <div class="project-content-btns">
-            <a href="https://walrec-9e5d8.web.app/" target="_blank">GitHub</a>
-            <a href="https://walrec-9e5d8.web.app/" target="_blank">Link</a>
+        </div>
+        <div class="project-card project-card-expand">
+          <h3>🧭 Screens & Features:</h3>
+          <div class="project-card-points">
+            <p><span>Login</span> - Basic username/password auth</p>
+            <p><span>Signup</span> - Email verification via Firebase</p>
+            <p>
+              <span>Auth Flow</span> - Blocks access until email is verified
+            </p>
+            <p>
+              <span>Dashboard</span> - Income & expenses in chart/calendar view
+            </p>
+            <p><span>Expense</span> - Add expenses with custom categories</p>
+            <p><span>Budget</span> - Track EMIs, subscriptions, etc.</p>
+            <p><span>Profile</span> - Emoji-based avatar and user info</p>
           </div>
         </div>
-
-        <div class="project-content">
-          <img src="./assets/pin.svg" alt="Pin Vector" />
-          <small>02</small>
-          <h3 class="highlight">🎨 CSSFusion</h3>
-          <p>A lightweight CSS utility library.</p>
-          <p>
-            It's like a little style toolkit — plug it into any project and
-            build with ready-made classes. Handy when you want less CSS clutter
-            and more styling freedom.
-          </p>
-          <div class="project-content-btns">
-            <a
-              href="https://sids-projects.github.io/CSSFusion/#/"
-              target="_blank"
-              >GitHub</a
-            >
-            <a href="https://github.com/Sids-projects/CSSFusion" target="_blank"
-              >Live Demo</a
-            >
-          </div>
-        </div>
-
-        <div class="project-content">
-          <img src="./assets/pin.svg" alt="Pin Vector" />
-          <small>03</small>
-          <h3 class="highlight">🌍 TravellersPond</h3>
-          <p>A lightweight CSS utility library.</p>
-          <p>
-            A full-on travel agency website built with Angular, crafted for a
-            real client. Think destination highlights, sweet travel deals, and a
-            smooth booking flow — all wrapped in a clean UI. Deployed on
-            Bluehost and
-          </p>
-          <div class="project-content-btns">
-            <a href="https://travellerspond.com/web" target="_blank">Live</a>
-          </div>
-        </div>
-
-        <div class="project-content">
-          <img src="./assets/pin.svg" alt="Pin Vector" />
-          <small>04</small>
-          <h3 class="highlight">🎨 StyleDocs</h3>
-          <p>A lightweight Angular utility library.</p>
-          <p>
-            It's like a little style toolkit — plug it into any project and
-            build with ready-made classes. Handy when you want less CSS clutter
-            and more styling freedom.
-          </p>
-          <div class="project-content-btns">
-            <a
-              href="http://fe-content.s3.ap-south-1.amazonaws.com/styledocs/index.html"
-              target="_blank"
-              >Live</a
-            >
-          </div>
+        <div class="project-card">
+          <h3>🛠 Tech Stack:</h3>
+          <p>Angular | Firebase</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="project-arrows">
-        <p (click)="scrollLeft()">◀️</p>
-        <p (click)="scrollRight()">▶️</p>
+  <section class="app-component app-projects" #sectionRef>
+    <header>
+      <div class="header-01">
+        <h2>🎨 Project - CSSFusion</h2>
+        <p>
+          It's like a little style toolkit — plug it into any project and build
+          with ready-made classes. Handy when you want less CSS clutter and more
+          styling freedom.
+        </p>
+      </div>
+
+      <div class="header-02">
+        <a href="https://github.com/sid-devspot/cssfusion" target="_blank"
+          >GitHub</a
+        >
+        <a href="https://sid-devspot.github.io/cssfusion/#/Home" target="_blank"
+          >🔗 Link</a
+        >
+      </div>
+    </header>
+
+    <div class="project-content">
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>📦 Overview</h3>
+          <p>
+            <strong>CSSFusion</strong> is a reusable Angular style package with
+            ready-made components and layout tools for fast, consistent UI
+            design.
+          </p>
+        </div>
+
+        <div class="project-card project-card-expand">
+          <h3>🧩 Components & Features:</h3>
+          <div class="project-card-points">
+            <p>
+              <span>Components</span> Includes reusable UI building blocks like
+              <strong>Tabs</strong>, <strong>Accordion</strong>,
+              <strong>Cards</strong>, and <strong>Buttons</strong> — all styled
+              and optimized for responsive layouts with simple directive usage.
+            </p>
+            <p>
+              <span>Grid & Layout</span> - Flex/grid utilities for screen
+              structure
+            </p>
+            <p>
+              <span>Customizer</span> - Live screen editor to visually build &
+              group components
+            </p>
+            <p>
+              <span>Theme Support</span> - Use built-in color palettes or
+              override with CSS variables
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>🛠 Tech Stack:</h3>
+          <p>Angular | SCSS | TypeScript | npm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-component app-projects" #sectionRef>
+    <header>
+      <div class="header-01">
+        <h2>🌍 Project - TravellersPond</h2>
+        <p>
+          Angular-based travel site with tours, deals, and easy booking. Hosted
+          on Bluehost.
+        </p>
+      </div>
+
+      <div class="header-02">
+        <a href="https://travellerspond.com/" target="_blank">🔗 Live</a>
+      </div>
+    </header>
+
+    <div class="project-content">
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>📦 Overview</h3>
+          <p>
+            <strong>TravellersPond</strong> is a responsive travel site for
+            browsing tour packages and contacting support, with an admin panel
+            for managing queries.
+          </p>
+        </div>
+
+        <div class="project-card project-card-expand">
+          <h3>🧭 Screens & Features:</h3>
+          <div class="project-card-points">
+            <p>
+              <span>Home</span> - Highlights travel categories with eye-catching
+              visuals
+            </p>
+            <p>
+              <span>Tour Listings</span> - Detailed international & domestic
+              packages
+            </p>
+            <p>
+              <span>Contact</span> - Users can submit queries for quick
+              follow-up
+            </p>
+            <p>
+              <span>Admin Login</span> - Authenticated access for travel agency
+              staff
+            </p>
+            <p><span>Admin Panel</span> - View and respond to user inquiries</p>
+            <p>
+              <span>Responsive Design</span> - Mobile-optimized and
+              touch-friendly UI
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>🛠 Tech Stack:</h3>
+          <p>Angular | PHP | MySQL | Bluehost</p>
+        </div>
       </div>
     </div>
   </section>
@@ -241,12 +318,6 @@
       <p>
         <span>📧</span>
         <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>
-      </p>
-      <p>
-        <span>🌐</span>
-        <a href="https://sids-projects.github.io/DevSpot/" target="_blank"
-          >My DevSpot</a
-        >
       </p>
       <small
         >🤝 Let's make the web a little cooler, one project at a time.</small

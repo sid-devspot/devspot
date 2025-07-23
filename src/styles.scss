@@ -10,15 +10,11 @@ body {
 }
 
 body {
+  @include darkMode();
+  --font-colour: #e2e2e2 !important;
+
   padding-bottom: env(safe-area-inset-bottom);
-}
-
-body.dark-mode::after {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-body.light-mode::after {
-  background: rgba(255, 255, 255, 0.2);
+  color: #e2e2e2;
 }
 
 main {
@@ -40,7 +36,6 @@ main {
     }
 
     header {
-      height: 20rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -48,17 +43,48 @@ main {
       text-align: center;
 
       h2 {
-        font-size: 4.2rem;
-        font-weight: 700;
+        font-size: 3.4rem;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 2.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .highlight {
+        font-family: var(--app-font-heads) !important;
+        color: var(--theme-colour);
+        font-size: 3rem !important;
       }
 
       p {
         font-size: 1.6rem;
         line-height: 2.6rem;
         max-width: 80rem;
+      }
+
+      a {
+        @include blurLayer($bdrRds: 1.2rem);
+        color: var(--font-colour);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.4rem;
+        padding: 0.6rem 1.8rem;
+        border-radius: 0.6rem;
+        text-decoration: none;
+        margin-top: 1.8rem;
+        text-align: center !important;
+
+        img {
+          width: 2rem;
+        }
+      }
+
+      .header-02 {
+        display: flex;
+        gap: 1.4rem;
       }
     }
 
@@ -91,8 +117,11 @@ main {
       gap: 1.4rem;
 
       h3 {
-        font-size: 6.4rem;
-        line-height: 6.8rem;
+        font-family: var(--app-font-heads);
+        color: var(--theme-colour);
+        font-size: 5.8rem;
+        margin-bottom: 0.4rem !important;
+        line-height: 6rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.2rem;
@@ -102,7 +131,7 @@ main {
       p {
         font-size: 1.8rem;
         text-align: center;
-        max-width: 120rem;
+        max-width: 100rem;
         line-height: 3rem;
       }
 
@@ -272,7 +301,6 @@ main {
     }
 
     .project-container {
-      width: 90dvw;
       display: flex;
       flex-direction: row;
       gap: 2rem;
@@ -399,14 +427,14 @@ main {
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.8rem;
 
         span {
-          font-size: 2.8rem;
+          font-size: 3.8rem;
         }
 
         a {
-          font-size: 2.8rem;
+          font-size: 2.4rem;
           text-align: none;
           font-family: var(--app-font-heads);
           color: var(--font-colour);
@@ -417,6 +445,64 @@ main {
       small {
         font-size: 1.6rem;
       }
+    }
+  }
+
+  .app-home {
+    grid-template-rows: 1fr !important;
+  }
+
+  .app-projects {
+    padding: 4rem !important;
+
+    .project-content {
+      max-width: 110rem;
+      margin: auto;
+      display: grid;
+      place-content: center;
+
+      .projects-grid {
+        max-height: 50rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .project-card {
+      @include blurLayer($bdrRds: 1.2rem);
+      color: var(--font-colour);
+      padding: 2rem;
+
+      p {
+        line-height: 2.4rem;
+      }
+
+      .project-card-points {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        p {
+          span {
+            color: var(--theme-colour);
+            font-weight: 600;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    .project-card-expand {
+      grid-row: span 2;
     }
   }
 }
@@ -481,6 +567,41 @@ main {
       .project-content {
         margin: 0 !important;
       }
+
+      .projects-grid {
+        max-height: 50rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 2rem;
+      }
+
+      .project-card {
+        p {
+          line-height: 2.4rem;
+        }
+
+        .project-card-points {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+
+          p {
+            span {
+              color: var(--theme-colour);
+              font-weight: 600;
+            }
+          }
+        }
+
+        h3 {
+          font-size: 1.8rem !important;
+          margin-bottom: 1.2rem;
+        }
+
+        p {
+          font-size: 1.2rem !important;
+        }
+      }
     }
   }
 }
@@ -513,6 +634,12 @@ main {
           font-size: 2.4rem;
           font-weight: 700;
           margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+          font-family: var(--app-font-heads) !important;
+          color: var(--theme-colour);
+          font-size: 2.4rem !important;
         }
 
         p {
