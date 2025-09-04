@@ -39,21 +39,31 @@
     <div class="app-body">
       <div class="about-container">
         <div class="about-content">
-          <h3 class="highlight">HTML / CSS / JavaScript / TypeScript</h3>
+          <h3 class="highlight">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+          </h3>
           <p>
             The essentials — used to structure, style, and breathe life into the
             frontend.
           </p>
         </div>
         <div class="about-content">
-          <h3 class="highlight">Angular</h3>
+          <h3 class="highlight"><span>Angular</span></h3>
           <p>
             Where it all comes together — building smooth, reactive, single-page
             applications.
           </p>
         </div>
         <div class="about-content">
-          <h3 class="highlight">Figma / Illustrator / Photoshop / Inkscape</h3>
+          <h3 class="highlight">
+            <span>Figma</span>
+            <span>Illustrator</span>
+            <span>Photoshop</span>
+            <span>Inkscape</span>
+          </h3>
           <p>
             My design toolkit — for wireframing, visual design, and keeping
             everything neat and user-friendly.
@@ -137,46 +147,38 @@
   <section class="app-component app-projects" #sectionRef>
     <header>
       <div class="header-01">
-        <h2>💸 Project - WalRec</h2>
+        <h2>
+          💸 Project - WalRec
+          <a href="https://walrec-9e5d8.web.app/" target="_blank">🔗 Link</a>
+        </h2>
         <p>
-          A personal expense tracking app with dark UI and chart-based insights.
+          A personal expense tracking app with dark UI and chart-based
+          insights.<br />
+          🛠 Tech Stack: Angular | Firebase
         </p>
       </div>
-
-      <div class="header-02">
-        <a href="https://walrec-9e5d8.web.app/" target="_blank">🔗 Link</a>
-      </div>
     </header>
+
     <div class="project-content">
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>📦 Overview</h3>
-          <p>
-            A simple finance tracker to help keep an eye on daily expenses and
-            incomes. Made with Angular + Firebase — login, track, and see your
-            money move in real-time.
-          </p>
-        </div>
-        <div class="project-card project-card-expand">
-          <h3>🧭 Screens & Features:</h3>
-          <div class="project-card-points">
-            <p><span>Login</span> - Basic username/password auth</p>
-            <p><span>Signup</span> - Email verification via Firebase</p>
+      <div class="project-imgs-box">
+        <button class="scroll-btn left" (click)="previousProject('walrec')">
+          <span class="material-symbols-outlined"> arrow_circle_left </span>
+        </button>
+        <div class="project-imgs">
+          <div>
+            <img
+              [src]="walrectCurrentProject.img"
+              [alt]="walrectCurrentProject.alt"
+            />
             <p>
-              <span>Auth Flow</span> - Blocks access until email is verified
+              <span>{{ walrectCurrentProject.title }}</span> -
+              {{ walrectCurrentProject.content }}
             </p>
-            <p>
-              <span>Dashboard</span> - Income & expenses in chart/calendar view
-            </p>
-            <p><span>Expense</span> - Add expenses with custom categories</p>
-            <p><span>Budget</span> - Track EMIs, subscriptions, etc.</p>
-            <p><span>Profile</span> - Emoji-based avatar and user info</p>
           </div>
         </div>
-        <div class="project-card">
-          <h3>🛠 Tech Stack:</h3>
-          <p>Angular | Firebase</p>
-        </div>
+        <button class="scroll-btn right" (click)="nextProject('walrec')">
+          <span class="material-symbols-outlined"> arrow_circle_right </span>
+        </button>
       </div>
     </div>
   </section>
@@ -248,80 +250,62 @@
   <section class="app-component app-projects" #sectionRef>
     <header>
       <div class="header-01">
-        <h2>🌍 Project - TravellersPond</h2>
+        <h2>
+          🌍 Project - TravellersPond
+          <a href="https://travellerspond.com/" target="_blank">🔗 Live</a>
+        </h2>
         <p>
           Angular-based travel site with tours, deals, and easy booking. Hosted
-          on Bluehost.
+          on Bluehost. <br />
+          🛠 Tech Stack: Angular | PHP | mySQL | bluehost
         </p>
-      </div>
-
-      <div class="header-02">
-        <a href="https://travellerspond.com/" target="_blank">🔗 Live</a>
       </div>
     </header>
 
     <div class="project-content">
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>📦 Overview</h3>
-          <p>
-            <strong>TravellersPond</strong> is a responsive travel site for
-            browsing tour packages and contacting support, with an admin panel
-            for managing queries.
-          </p>
-        </div>
-
-        <div class="project-card project-card-expand">
-          <h3>🧭 Screens & Features:</h3>
-          <div class="project-card-points">
+      <div class="project-imgs-box">
+        <button
+          class="scroll-btn left"
+          (click)="previousProject('travellerspond')"
+        >
+          <span class="material-symbols-outlined"> arrow_circle_left </span>
+        </button>
+        <div class="project-imgs">
+          <div>
+            <img
+              [src]="travellerCurrentProject.img"
+              [alt]="travellerCurrentProject.alt"
+            />
             <p>
-              <span>Home</span> - Highlights travel categories with eye-catching
-              visuals
-            </p>
-            <p>
-              <span>Tour Listings</span> - Detailed international & domestic
-              packages
-            </p>
-            <p>
-              <span>Contact</span> - Users can submit queries for quick
-              follow-up
-            </p>
-            <p>
-              <span>Admin Login</span> - Authenticated access for travel agency
-              staff
-            </p>
-            <p><span>Admin Panel</span> - View and respond to user inquiries</p>
-            <p>
-              <span>Responsive Design</span> - Mobile-optimized and
-              touch-friendly UI
+              <span>{{ travellerCurrentProject.title }}</span> -
+              {{ travellerCurrentProject.content }}
             </p>
           </div>
         </div>
-
-        <div class="project-card">
-          <h3>🛠 Tech Stack:</h3>
-          <p>Angular | PHP | MySQL | Bluehost</p>
-        </div>
+        <button
+          class="scroll-btn right"
+          (click)="nextProject('travellerspond')"
+        >
+          <span class="material-symbols-outlined"> arrow_circle_right </span>
+        </button>
       </div>
     </div>
   </section>
 
   <section class="app-component app-contact" #sectionRef>
-    <header>
-      <h2>📮 Say Hello</h2>
-      <p>
-        Always open to chat, share ideas, or collab on something cool. Whether
-        it's frontend fun, UI/UX design, or random side projects — I'm in.
-      </p>
-    </header>
+    <header></header>
     <div class="app-body contact-details">
-      <p>
+      <div class="contact-content">
+        <h2>📮 Say Hello</h2>
+        <p>
+          Always open to chat, share ideas, or collab on something cool. Whether
+          it's frontend fun, UI/UX design, or random side projects — I'm in.
+        </p>
+      </div>
+      <p class="contact-mail">
         <span>📧</span>
         <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>
       </p>
-      <small
-        >🤝 Let's make the web a little cooler, one project at a time.</small
-      >
     </div>
   </section>
 </main>

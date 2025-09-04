@@ -9,7 +9,7 @@
 }
 
 :root {
-  --theme-colour: rgb(255, 226, 102);
+  --theme-colour: #ffe266;
   --sub-theme-colour: #433dc3;
   --app-mode-clr: #0d1116;
   --font-colour: #e2e2e2;
@@ -137,10 +137,18 @@ app-root,
 }
 
 .highlight {
-  font-family: var(--app-font-content) !important;
-  font-size: 1.8rem !important;
-  font-weight: 500 !important;
-  color: var(--theme-colour);
+  display: flex;
+  gap: 1rem;
+  
+  span {
+    @include blurLayer($bdrRds: 1rem);
+    font-family: var(--app-font-heads) !important;
+    color: #ffffff !important;
+    font-size: 1.8rem;
+    line-height: 1.8rem !important;
+    padding: 0.6rem 1rem !important;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .uline {

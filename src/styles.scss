@@ -11,10 +11,10 @@ body {
 
 body {
   @include darkMode();
-  --font-colour: #e2e2e2 !important;
+  --font-colour: #f0f0f0 !important;
 
   padding-bottom: env(safe-area-inset-bottom);
-  color: #e2e2e2;
+  color: #f0f0f0;
 }
 
 main {
@@ -47,6 +47,10 @@ main {
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
       }
 
       .highlight {
@@ -62,7 +66,7 @@ main {
       }
 
       a {
-        @include blurLayer($bdrRds: 1.2rem);
+        @include blurLayer($bdrRds: 0.8rem);
         color: var(--font-colour);
         display: flex;
         align-items: center;
@@ -70,11 +74,10 @@ main {
         gap: 1rem;
         font-weight: 500;
         letter-spacing: 0.1rem;
-        margin-bottom: 0.4rem;
-        padding: 0.6rem 1.8rem;
-        border-radius: 0.6rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
         text-decoration: none;
-        margin-top: 1.8rem;
         text-align: center !important;
 
         img {
@@ -309,57 +312,60 @@ main {
       margin-bottom: 2rem;
       -ms-overflow-style: none;
       scrollbar-width: none;
+    }
 
-      .project-content {
-        @include blurLayer($bdrRds: 1.2rem);
-        padding: 4rem 1.8rem 1.8rem 1.8rem;
-        width: 34rem;
+    .project-content {
+      .project-imgs-box {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-shrink: 0;
-        position: relative;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
 
-        img {
-          width: 5rem;
-          position: absolute;
-          top: -1rem;
-          left: 50%;
-          transform: translateX(-50%);
+        .scroll-btn {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          background-color: transparent;
+          border: none;
+          color: #ffffff;
+          cursor: pointer;
+
+          span {
+            font-size: 3.4rem;
+          }
         }
 
-        small {
-          font-family: var(--app-font-heads);
-          display: block;
-          font-size: 2.8rem;
-          margin-bottom: 1rem;
-        }
-
-        h3 {
-          font-size: 2.2rem;
-          margin-bottom: 0.8rem;
-        }
-
-        p {
-          font-size: 1.4rem;
-        }
-
-        .project-content-btns {
+        .project-imgs {
+          @include blurLayer($bdrRds: 1.2rem);
+          min-width: 28rem;
+          width: 100%;
+          max-width: 86rem;
+          padding: 1.8rem;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1.2rem;
-          margin-top: 1.6rem;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 2rem;
+          overflow-x: auto;
 
-          a {
-            @include blurLayer($bdrRds: 0.6rem);
+          div {
             width: 100%;
-            padding: 0.6rem 0;
-            color: var(--font-colour);
-            text-decoration: none;
-            font-family: var(--app-font-heads);
-            font-size: 1.8rem;
-            text-align: center;
+            max-width: 84rem;
+            flex-shrink: 0;
+
+            img {
+              border-radius: 1rem;
+              width: 100%;
+            }
+
+            p {
+              font-size: 1.6rem;
+              text-align: center;
+              margin-top: 1.8rem;
+
+              span {
+                color: var(--theme-colour);
+              }
+            }
           }
         }
       }
@@ -422,28 +428,57 @@ main {
     }
 
     .contact-details {
-      p {
+      .contact-content {
+        h2 {
+          font-size: 3.4rem;
+          text-transform: uppercase;
+          text-align: center;
+          margin-bottom: 1.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.6rem;
+        }
+  
+        .highlight {
+          font-family: var(--app-font-heads) !important;
+          color: var(--theme-colour);
+          font-size: 3rem !important;
+        }
+  
+        small {
+          font-size: 1.6rem;
+        }
+  
+        p {
+          max-width: 80rem;
+          margin: 0 auto;
+          font-size: 1.6rem;
+          text-align: center;
+          line-height: 2.4rem !important;
+        }
+      }
+
+      .contact-mail {
+        @include blurLayer($bdrRds: 1.2rem);
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        margin-bottom: 1.8rem;
+        padding: 1.8rem;
+        margin: 1.8rem 0;
 
         span {
-          font-size: 3.8rem;
+          font-size: 2.4rem;
         }
 
         a {
-          font-size: 2.4rem;
+          font-size: 1.8rem;
           text-align: none;
           font-family: var(--app-font-heads);
           color: var(--font-colour);
           text-decoration: none;
         }
-      }
-
-      small {
-        font-size: 1.6rem;
       }
     }
   }
