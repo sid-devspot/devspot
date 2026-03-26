@@ -5,10 +5,7 @@ import {
   OnInit,
   QueryList,
   ViewChildren,
-  ViewChild,
 } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',

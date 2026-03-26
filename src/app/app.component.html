@@ -1,19 +1,21 @@
-<main>
-  <section class="app-component app-home" #sectionRef>
+<main class="app-main">
+  <section class="app-home">
     <div class="home-container">
-      @if (screenWidth > 700) {
-      <h3 class="type-effect">👋 Hey there, I'm Siddarth G</h3>
-      } @if (screenWidth < 700) {
-      <h3>
-        👋 Hey there,
-        <span class="type-effect">I'm Siddarth G</span>
-      </h3>
+      @if (screenWidth > 800) {
+        <h3 class="type-effect">Hey there, I'm Siddarth G</h3>
+      }
+      @if (screenWidth < 800) {
+        <h3>
+          Hey there,<br />
+          <span class="type-effect">I'm Siddarth G</span>
+        </h3>
       }
       <p>
-        I'm a Frontend Developer who enjoys turning pixels into playful, functional interfaces. I
-        like building things that feel smooth, look clean, and just work. Design is where I sketch
-        ideas. Code is where I bring them to life. I try to keep things simple, neat, and a little
-        bit shiny ✨
+        I'm a Frontend Developer who enjoys turning pixels into playful,
+        functional interfaces. I like building things that feel smooth, look
+        clean, and just work. Design is where I sketch ideas. Code is where I
+        bring them to life. I try to keep things simple, neat, and a little bit
+        shiny
       </p>
       <div class="icons">
         <a href="https://github.com/orgs/Sids-projects/repositories"
@@ -27,12 +29,12 @@
     </div>
   </section>
 
-  <section class="app-component app-about" #sectionRef>
+  <section class="app-about">
     <header>
-      <h2>🧰 What I Use & How I Build</h2>
+      <h2>What I Use & How I Build</h2>
       <p>
-        From sketching ideas to shipping features — here's the stack that helps me build smooth,
-        user-friendly experiences.
+        From sketching ideas to shipping features — here's the stack that helps
+        me build smooth, user-friendly experiences.
       </p>
     </header>
 
@@ -41,8 +43,8 @@
         <div class="about-content">
           <h3>Frontend Foundations</h3>
           <p>
-            The frontend foundation — structuring layouts, styling interfaces, and adding
-            interactivity that feels smooth and intuitive.
+            The frontend foundation — structuring layouts, styling interfaces,
+            and adding interactivity that feels smooth and intuitive.
           </p>
           <div class="highlight">
             <span>HTML</span>
@@ -55,8 +57,8 @@
         <div class="about-content">
           <h3>Frontend Frameworks</h3>
           <p>
-            Where things level up — building fast, reactive applications and mobile experiences that
-            just feel right.
+            Where things level up — building fast, reactive applications and
+            mobile experiences that just feel right.
           </p>
           <div class="highlight">
             <span>Angular</span>
@@ -67,8 +69,8 @@
         <div class="about-content">
           <h3>Backend & Data</h3>
           <p>
-            Powering the frontend behind the scenes — handling data, logic, and APIs to keep
-            everything connected and working smoothly.
+            Powering the frontend behind the scenes — handling data, logic, and
+            APIs to keep everything connected and working smoothly.
           </p>
           <div class="highlight">
             <span>PHP</span>
@@ -79,8 +81,8 @@
         <div class="about-content">
           <h3>Design Tools</h3>
           <p>
-            My design toolkit — for wireframes, UI visuals, icons, and polishing details before they
-            turn into code.
+            My design toolkit — for wireframes, UI visuals, icons, and polishing
+            details before they turn into code.
           </p>
           <div class="highlight">
             <span>Figma</span>
@@ -93,133 +95,336 @@
     </div>
   </section>
 
-  <section class="app-component app-experience" #sectionRef>
-    <header>
-      <h2>🧠 My Journey So Far</h2>
-      <p>From building UI systems to shipping real-world features — here's what I've been up to.</p>
-    </header>
-    <div class="app-body experience-content">
-      <div class="experience-content-01">
-        <h3 class="highlight">🛠 Vsolv Engineering Pvt Ltd</h3>
-        <p>Frontend Developer / UI-UX Designer</p>
-        <p>2025 - Present</p>
+  <section class="app-project app-walrec app-top-space">
+    <div class="project-break app-top-space">
+      <div class="project-break-content">
+        <span>Project</span>
+        <h2>Walrec</h2>
+        <p>
+          WalRec is a personal finance tracking system designed to simplify how
+          users record, understand, and manage their money — across both web and
+          mobile platforms.
+        </p>
       </div>
-      <div class="experience-content-02">
-        <div class="left-box">
+    </div>
+
+    <div class="project-set project-set-01">
+      <img src="./assets/walrec-assets/img01.svg" alt="Laptop with dashboard" />
+      <h2>
+        Managing money shouldn't feel complicated.
+        <a href="https://walrec-9e5d8.web.app/" target="_blank">🔗 Live App</a>
+      </h2>
+    </div>
+
+    <div class="project-set project-set-02">
+      <header>
+        <h2>The Idea</h2>
+        <p class="title-tip">
+          The goal behind WalRec was to create a system that feels simple,
+          guided, and easy to use — while still being powerful enough to manage
+          real financial scenarios.
+        </p>
+      </header>
+      <div class="idea-set">
+        <div class="idea-item">
+          <img src="./assets/walrec-assets/img02-1.svg" alt="" />
+        </div>
+        <div class="idea-item" style="align-items: flex-start">
+          <img src="./assets/walrec-assets/img02-2.svg" alt="" />
+        </div>
+        <div class="idea-item">
+          <img src="./assets/walrec-assets/img02-3.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="project-set project-set-03">
+      <header>
+        <h2>Core Features</h2>
+      </header>
+      <div class="features-set">
+        <div class="features-item">
+          <h4>Dashboard & Insights</h4>
           <p>
-            Built a reusable Angular style package (Bootstrap-style) published to NPM — helping
-            teams create consistent layouts faster with shared utilities and components.
+            Provides a quick overview of income, expenses, and balance along
+            with visual charts like cashflow, category analytics, and growth
+            tracking.
           </p>
+        </div>
+        <div class="features-item">
+          <h4>Transaction Management</h4>
           <p>
-            Designed a scalable SCSS architecture with clean structure for variables, mixins,
-            components, and utilities — keeping styles easy to maintain and extend.
+            Users can add, edit, and filter transactions with ease. The
+            integration of calendar-based filtering helps users track their
+            finances by date.
           </p>
+        </div>
+        <div class="features-item feature-expand-col">
+          <h4>Budget Planner (EMI & Subscription)</h4>
           <p>
-            Developed custom Angular directives for interactions, animations, tab scrolling, and
-            navigation — cutting down repetitive UI logic across apps.
+            A dedicated planner to track EMIs and subscriptions with due dates,
+            progress tracking, and payment history.
+          </p>
+        </div>
+        <div class="features-item">
+          <h4>Category Customization</h4>
+          <p>
+            Users can create and manage their own categories with custom icons
+            and colors, making the experience more personal and organized.
+          </p>
+        </div>
+        <div class="features-item">
+          <h4>Profile Personalization</h4>
+          <p>
+            Includes avatar selection and profile customization to make the app
+            feel more user-centric.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-set project-set-04">
+      <header>
+        <h2>Product Overview</h2>
+      </header>
+
+      <div class="transaction-set">
+        <img src="./assets/walrec-assets/img03.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="project-set project-set-05">
+      <header>
+        <h2>Tech Stack</h2>
+      </header>
+      <ul>
+        <li>Angular</li>
+        <li>Firebase</li>
+        <li>React Native (Expo)</li>
+        <li>Chart Libraries</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="app-project app-travel app-top-space">
+    <div class="project-break app-top-space">
+      <div class="project-break-content">
+        <span>Next Project</span>
+        <h2>TravellersPond</h2>
+        <p>
+          TravellersPond is a travel booking platform designed to help users
+          explore, compare, and book travel packages through a clean and
+          intuitive web experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-set project-set-01">
+      <img
+        src="./assets/Travellerspond/img01.svg"
+        alt="TravellersPond Preview"
+      />
+      <h2>
+        Exploring travel should feel exciting, not complicated.
+        <a href="https://travellerspond.com/" target="_blank">🔗 Live</a>
+      </h2>
+    </div>
+
+    <div class="project-set project-set-02">
+      <header>
+        <h2>The Goal</h2>
+        <p class="title-tip">
+          Simplify travel discovery, provide structured information, and enable
+          a smooth booking journey across all devices.
+        </p>
+      </header>
+
+      <div class="idea-set">
+        <div class="idea-item">
+          <img src="./assets/Travellerspond/img02-1.png" alt="" />
+        </div>
+        <div class="idea-item" style="align-items: flex-start">
+          <img src="./assets/Travellerspond/img02-2.png" alt="" />
+        </div>
+        <div class="idea-item">
+          <img src="./assets/Travellerspond/img02-1.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="project-set project-set-03">
+      <header>
+        <h2>Core Features</h2>
+        <p class="title-tip">
+          A complete platform for browsing, understanding, and booking travel
+          experiences.
+        </p>
+      </header>
+
+      <div class="features-set">
+        <div class="features-item">
+          <h4>Tour Listings</h4>
+          <p>
+            Browse a variety of travel packages with visually rich and
+            structured listings.
           </p>
         </div>
 
-        <div class="right-box">
+        <div class="features-item">
+          <h4>Detailed Package View</h4>
           <p>
-            Led frontend development for the NAC Bank Vendor Management Process — an end-to-end
-            vendor onboarding system with secure data capture and multi-level approval workflows,
-            ensuring vendor information is validated before activation.
+            Each tour includes itinerary, pricing, and highlights for better
+            decision making.
           </p>
+        </div>
+
+        <div class="features-item">
+          <h4>Inquiry & Contact</h4>
           <p>
-            Over 7 months, worked closely with backend teams and stakeholders to design clear,
-            user-friendly interfaces for complex banking workflows, focusing on form structure, data
-            accuracy, and smooth state handling to make critical processes intuitive and reliable.
+            Quick inquiry system to connect users with the travel agency easily.
+          </p>
+        </div>
+
+        <div class="features-item">
+          <h4>Responsive Experience</h4>
+          <p>Optimized layouts for both desktop and mobile devices.</p>
+        </div>
+
+        <div class="features-item feature-expand-col">
+          <p>
+            In addition to user-facing features, the platform includes a custom
+            admin system for managing content dynamically.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-set project-set-04">
+      <header>
+        <span class="tag">Advanced Feature</span>
+        <h2>Dynamic Admin & Live Preview System</h2>
+        <p class="title-tip">
+          A custom-built admin panel that enables real-time content editing with
+          live preview capabilities.
+        </p>
+      </header>
+      <div class="admin-set">
+        <img src="./assets/Travellerspond/img04.svg" alt="" />
+        <div class="admin-content">
+          <p>
+            To make the platform scalable and easy to manage, I developed a
+            custom admin application that enables dynamic control over website
+            content without requiring code changes. The system offers a smooth
+            editing experience with instant preview capabilities, allowing users
+            to see updates in real time while modifying content. It includes
+            flexible dynamic forms for managing tours, banners, and pages, a
+            live preview system using iframe, instant synchronization of changes
+            to the live website, and reusable content blocks designed for
+            scalability and future expansion.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="app-component app-projects" #sectionRef>
-    <header>
-      <div class="header-01">
-        <h2>
-          💸 Project - WalRec
-          <a href="https://walrec-9e5d8.web.app/" target="_blank">🔗 Link</a>
-        </h2>
+  <section class="app-project app-cssfusion app-top-space">
+    <div class="project-break app-top-space">
+      <div class="project-break-content">
+        <span>Next Project</span>
+        <h2>CssFusion</h2>
         <p>
-          A personal expense tracking app with dark UI and chart-based insights.<br />
-          🛠 Tech Stack: Angular | Firebase
+          cssfusion is a lightweight CSS utility package designed to simplify
+          styling, speed up development, and maintain consistent UI across
+          projects.
         </p>
       </div>
-    </header>
+    </div>
 
-    <div class="project-content">
-      <div class="project-imgs-box">
-        <button class="scroll-btn left" (click)="previousProject('walrec')">
-          <span class="material-symbols-outlined"> arrow_circle_left </span>
-        </button>
-        <div class="project-imgs">
-          <div>
-            <img [src]="walrectCurrentProject.img" [alt]="walrectCurrentProject.alt" />
-            <p>
-              <span>{{ walrectCurrentProject.title }}</span> -
-              {{ walrectCurrentProject.content }}
-            </p>
-          </div>
+    <div class="project-set project-set-01">
+      <img src="./assets/cssfussion/img01.svg" alt="" />
+      <h2>
+        Build faster. Style smarter.
+        <a href="https://sid-devspot.github.io/cssfusion/#/Home"
+          >🔗 NPM Package</a
+        >
+      </h2>
+    </div>
+
+    <div class="project-set project-set-02">
+      <header>
+        <h2>The Idea</h2>
+        <p class="title-tip">
+          The goal behind cssfusion was to reduce repetitive CSS work by
+          creating a set of reusable utility classes and styling patterns,
+          allowing developers to build interfaces quickly and consistently
+          without writing styles from scratch for every component.
+        </p>
+      </header>
+      <div class="idea-set">
+        <div class="idea-item">
+          <img src="./assets/cssfussion/img02-1.svg" alt="" />
         </div>
-        <button class="scroll-btn right" (click)="nextProject('walrec')">
-          <span class="material-symbols-outlined"> arrow_circle_right </span>
-        </button>
+        <div class="idea-item" style="align-items: flex-start">
+          <img src="./assets/cssfussion/img02-2.svg" alt="" />
+        </div>
+        <div class="idea-item">
+          <img src="./assets/cssfussion/img02-3.svg" alt="" />
+        </div>
       </div>
+    </div>
+
+    <div class="project-set project-set-03">
+      <header>
+        <h2>Core Features</h2>
+      </header>
+      <div class="features-set">
+        <div class="features-item">
+          <h4>Utility-Based Styling</h4>
+          <p>
+            Predefined classes for layout, spacing, and typography to speed up
+            UI development.
+          </p>
+        </div>
+        <div class="features-item">
+          <h4>Reusable Patterns</h4>
+          <p>
+            Common UI structures that help maintain consistency across different
+            screens.
+          </p>
+        </div>
+        <div class="features-item feature-expand-col">
+          <h4>Responsive Helpers</h4>
+          <p>
+            Built-in support for responsive design to adapt layouts across
+            devices.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-set project-set-04">
+      <header>
+        <h2>Outcome</h2>
+        <p class="title-tip">
+          cssfusion improved development speed and made it easier to build
+          scalable, consistent user interfaces across multiple projects.
+        </p>
+        <img src="./assets/cssfussion/img04.svg" alt="" />
+      </header>
     </div>
   </section>
 
-  <section class="app-component app-projects" #sectionRef>
+  <section class="app-contact app-top-space">
     <header>
-      <div class="header-01">
-        <h2>
-          🌍 Project - TravellersPond
-          <a href="https://travellerspond.com/" target="_blank">🔗 Live</a>
-        </h2>
-        <p>
-          Angular-based travel site with tours, deals, and easy booking. Hosted on Bluehost. <br />
-          🛠 Tech Stack: Angular | PHP | mySQL | bluehost
-        </p>
-      </div>
-    </header>
-
-    <div class="project-content">
-      <div class="project-imgs-box">
-        <button class="scroll-btn left" (click)="previousProject('travellerspond')">
-          <span class="material-symbols-outlined"> arrow_circle_left </span>
-        </button>
-        <div class="project-imgs">
-          <div>
-            <img [src]="travellerCurrentProject.img" [alt]="travellerCurrentProject.alt" />
-            <p>
-              <span>{{ travellerCurrentProject.title }}</span> -
-              {{ travellerCurrentProject.content }}
-            </p>
-          </div>
-        </div>
-        <button class="scroll-btn right" (click)="nextProject('travellerspond')">
-          <span class="material-symbols-outlined"> arrow_circle_right </span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="app-component app-contact" #sectionRef>
-    <header></header>
-    <div class="app-body contact-details">
-      <div class="contact-content">
-        <h2>📮 Say Hello</h2>
-        <p>
-          Always open to chat, share ideas, or collab on something cool. Whether it's frontend fun,
-          UI/UX design, or random side projects — I'm in.
-        </p>
-      </div>
-      <p class="contact-mail">
-        <span>📧</span>
-        <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>
+      <h2>📮 Say Hello</h2>
+      <p>
+        Always open to chat, share ideas, or collab on something cool. Whether
+        it's frontend fun, UI/UX design, or random side projects — I'm in.
       </p>
-    </div>
+    </header>
+    <p class="contact-mail">
+      <span>📧</span>
+      <a href="mailto:siddarthg.dev@gmail.com">siddarthg.dev&#64;gmail.com</a>
+    </p>
   </section>
 </main>
