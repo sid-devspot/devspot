@@ -14,6 +14,7 @@
   --app-font-heads: "Cubano", serif !important;
   --app-font-content: "Outfit", sans-serif;
   --app-space: 4rem;
+  --app-project-gap: 12rem;
 }
 
 * {
@@ -156,12 +157,20 @@ app-root,
 }
 
 .app-main {
-  padding: var(--app-space);
-  padding-bottom: 30vh;
+  padding: var(--app-space) var(--app-space) 30vh var(--app-space);
+
+  @media only screen and (max-width: 600px) {
+    --app-space: 2rem !important;
+    padding: var(--app-space) var(--app-space) 20vh var(--app-space) !important;
+  }
 }
 
 .app-top-space {
   margin-top: 10rem;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 6rem !important;
+  }
 }
 
 .app-home {
@@ -277,7 +286,7 @@ app-root,
 
   .about-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2.6rem;
 
     .about-content {
@@ -335,7 +344,7 @@ app-root,
 .app-project {
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: var(--app-project-gap);
 
   .project-set {
     display: flex;
@@ -450,13 +459,36 @@ app-root,
       }
     }
 
-    @media only screen and (max-width: 580px) {
+    @media only screen and (max-width: 600px) {
+      .idea-set.marquee {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .marquee-track {
+        display: flex;
+        width: fit-content;
+        animation: marqueeScroll 18s linear infinite;
+      }
+
       .idea-item {
-        width: 18rem !important;
-        height: 17rem !important;
+        flex-shrink: 0;
+        margin-right: 2rem;
+        width: 28rem;
+        height: 24rem;
 
         img {
-          max-width: 18rem !important;
+          width: 100%;
+          max-width: 24rem;
+        }
+      }
+
+      @keyframes marqueeScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
         }
       }
     }
@@ -602,6 +634,8 @@ app-root,
   }
 
   @media only screen and (max-width: 600px) {
+    --app-project-gap: 8rem !important;
+
     .project-set {
       header {
         h2 {
