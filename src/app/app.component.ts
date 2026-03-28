@@ -1,165 +1,96 @@
 import {
   Component,
-  ElementRef,
-  HostListener,
   OnInit,
-  QueryList,
-  ViewChildren,
+  AfterViewInit,
+  HostListener,
 } from '@angular/core';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  currecntComp: string = 'home';
-  @ViewChildren('sectionRef') sections!: QueryList<ElementRef<HTMLElement>>;
+export class AppComponent implements OnInit, AfterViewInit {
   screenWidth: number = window.innerWidth;
   screenHeight: number = window.innerHeight;
 
-  projects: any = {
-    walrec: [
-      {
-        img: './assets/Walrec/screenshot-01.png',
-        alt: 'Screenshot 01',
-        title: 'Login & Signup',
-        content: 'Basic username/password auth & Email',
-      },
-      {
-        img: './assets/Walrec/screenshot-02.png',
-        alt: 'Screenshot 02',
-        title: 'Dashboard',
-        content: 'Income & expenses in chart/calendar view',
-      },
-      {
-        img: './assets/Walrec/screenshot-03.png',
-        alt: 'Screenshot 03',
-        title: 'Expense & Income',
-        content: 'Add expenses with custom',
-      },
-      {
-        img: './assets/Walrec/screenshot-04.png',
-        alt: 'Screenshot 04',
-        title: 'Budget',
-        content: 'Track EMIs, subscriptions, etc.',
-      },
-      {
-        img: './assets/Walrec/screenshot-05.png',
-        alt: 'Screenshot 05',
-        title: 'Record',
-        content: 'Deatiled Record about Income and Expense',
-      },
-      {
-        img: './assets/Walrec/screenshot-06.png',
-        alt: 'Screenshot 06',
-        title: 'Profile',
-        content: 'Emoji-based avatar and user info',
-      },
-    ],
-    tarvellerSpond: [
-      {
-        img: './assets/Travellerspond/screenshot-01.png',
-        alt: 'Screenshot 01',
-        title: 'Home',
-        content: 'Highlights travel categories with eye-catching visuals',
-      },
-      {
-        img: './assets/Travellerspond/screenshot-02.png',
-        alt: 'Screenshot 02',
-        title: 'Tour Listings',
-        content: 'Detailed international & domestic packages',
-      },
-      {
-        img: './assets/Travellerspond/screenshot-03.png',
-        alt: 'Screenshot 03',
-        title: 'Tour Listings',
-        content: 'Detailed international & domestic packages',
-      },
-      {
-        img: './assets/Travellerspond/screenshot-04.png',
-        alt: 'Screenshot 04',
-        title: 'Contact',
-        content: 'Users can submit queries for quick follow-up',
-      },
-      {
-        img: './assets/Travellerspond/screenshot-05.png',
-        alt: 'Screenshot 05',
-        title: 'Admin Login',
-        content: 'Authenticated access for travel agency staff',
-      },
-      {
-        img: './assets/Travellerspond/screenshot-06.png',
-        alt: 'Screenshot 06',
-        title: 'Responsive Design',
-        content: 'Mobile-optimized and touch-friendly UI',
-      },
-    ],
-  };
-
-  walrecCount = 0;
-  walrectCurrentProject: any = this.projects.walrec[this.walrecCount];
-  travellerCount = 0;
-  travellerCurrentProject: any = this.projects.tarvellerSpond[this.travellerCount];
-
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const section = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            section.classList.remove('inactive');
-          } else {
-            section.classList.add('inactive');
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
+    this.initScrollAnimations();
+  }
+
+  initScrollAnimations() {
+    const sections = gsap.utils.toArray<HTMLElement>(
+      '.app-home, .app-about, .app-project, .app-contact'
     );
 
-    this.sections.forEach((section) => observer.observe(section.nativeElement));
-  }
+    sections.forEach((section) => {
+      // 🔹 MAIN REVEAL
+      gsap.fromTo(
+        section,
+        {
+          opacity: 0,
+          y: 120,
+          scale: 0.96,
+          filter: 'blur(10px)',
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            end: 'top 30%',
+            scrub: true,
+          },
+        }
+      );
 
-  nextProject(param: string) {
-    if (param === 'walrec') {
-      if (this.walrecCount < this.projects.walrec.length - 1) {
-        this.walrecCount++;
-        this.walrectCurrentProject =
-          this.projects.walrec[this.walrecCount];
-      }
-    }
-
-    if (param === 'travellerspond') {
-      if (this.travellerCount < this.projects.tarvellerSpond.length - 1) {
-        this.travellerCount++;
-        this.travellerCurrentProject =
-          this.projects.tarvellerSpond[this.travellerCount];
-      }
-    }
-  }
-
-  previousProject(param: string) {
-    if (param === 'walrec') {
-      if (this.walrecCount > 0) {
-        this.walrecCount--;
-        this.walrectCurrentProject =
-          this.projects.walrec[this.walrecCount];
-      }
-    }
-
-    if (param === 'travellerspond') {
-      if (this.travellerCount > 0) {
-        this.travellerCount--;
-        this.travellerCurrentProject =
-          this.projects.tarvellerSpond[this.travellerCount];
-      }
-    }
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 50%',
+        end: 'bottom 50%',
+        onEnter: () => {
+          gsap.to(section, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+          });
+        },
+        onLeave: () => {
+          gsap.to(section, {
+            opacity: 0.6,
+            scale: 0.98,
+            duration: 0.4,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(section, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(section, {
+            opacity: 0.6,
+            scale: 0.98,
+            duration: 0.4,
+          });
+        },
+      });
+    });
   }
 
   @HostListener('window:resize', ['$event'])
